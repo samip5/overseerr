@@ -4,9 +4,24 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.local
+#    environment:
+#      - NODE_ENV=development
+#      - DB_TYPE=postgres
+#      - DB_HOST=psql
+#      - DB_USER=overseerr
+#      - DB_PASSWORD=overseerr
+#      - DB_NAME=overseerr
     ports:
       - 5055:5055
     volumes:
       - .:/app:rw,cached
       - /app/node_modules
       - /app/.next
+#  psql:
+#    image: postgres:16.1-alpine
+#    environment:
+#      POSTGRES_USER: overseerr
+#      POSTGRES_PASSWORD: overseerr
+#      POSTGRES_DB: overseerr
+#    volumes:
+#      - ./db:/var/lib/postgresql/data
